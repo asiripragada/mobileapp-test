@@ -6,9 +6,14 @@
     <meta name="MobileOptimized" content="1"/>
 <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	 
 
-	  <style>.container {
+<script>
+  function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
+  }
+</script>
+	 
+<style>.container {
   position: relative;
   width: 100%;
   overflow: hidden;
@@ -29,12 +34,9 @@ body {
 	
     overflow:visible;
 	
-	
-	
-	
 }</style>
   </head>
-	<div class="container"> 
-  <iframe class="responsive-iframe" src="https://dermavant.customerinsights.ai/v/NDR1"></iframe>
-</div>
+	<iframe src="https://dermavant.customerinsights.ai/v/NDR1" frameborder="0" scrolling="no" onload="resizeIframe(this)" />
+	  </iframe>
+
 </html>
