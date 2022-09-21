@@ -29,37 +29,17 @@
 }
 </style>
 	  <script>
-
-		  
-		   <system.webServer>
-     <httpProtocol allowKeepAlive="true" >
-       <customHeaders>
-         <add name="X-Frame-Options" value="*" />
-       </customHeaders>
-     </httpProtocol>
- </system.webServer>
-		  <script type="text/javascript">
-    var iframeURL = 'https://parthenon.customerinsights.ai/v/nTWEgcZOElhy';
-    var iframeID = 'MyIFrame';
-
-    function loadIframe(){
-        //pre-authenticate
-        var req = new XMLHttpRequest();
-        req.open("POST",this.iframeURL, false, "username", "password"); //use POST to safely send combination
-        req.send(null); //here you can pass extra parameters through
-
-        //setiFrame's SRC attribute
-        var iFrameWin = document.getElementById(this.iframeID);
-        iFrameWin.src = this.iframeURL + "?extraParameters=true";
-    }
-
-    //onload, call loadIframe() function
-    loadIframe();   
-</script>
+            const uuidv4 = () => ([1e7]+1e3+4e3+8e3+1e11).replace(/[018]/g, c => (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16));
+            const id = localStorage.getItem('id') || uuidv4();
+            localStorage.setItem('id', id);
+            const iframe = document.createElement('iframe');
+            iframe.setAttribute('src', `https://parthenon.customerinsights.ai/v/nTWEgcZOElhy=${id}`);
+            document.body.appendChild(iframe);
+        </script>
 	</script>
   </head>
 	 <div class="container"> 
-  <iframe class="responsive-iframe" src="https://parthenon.customerinsights.ai/v/nTWEgcZOElhy" secure="true" allow="publickey-credentials-get *" samesite="none" ></iframe>
+  <iframe class="responsive-iframe" src="https://parthenon.customerinsights.ai/v/nTWEgcZOElhy" secure="true" allow="publickey-credentials-get *" ></iframe>
 </div>
 
 </html>
