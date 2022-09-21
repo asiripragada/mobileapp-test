@@ -54,6 +54,14 @@ var setupScroll = window.onload = function() {
   // after it fires the onload event
   setTimeout(scrollTo, 0, 0, 1);
 };
+		  
+		   <system.webServer>
+     <httpProtocol allowKeepAlive="true" >
+       <customHeaders>
+         <add name="X-Frame-Options" value="*" />
+       </customHeaders>
+     </httpProtocol>
+ </system.webServer>
 	</script>
   </head>
 	 <div class="container"> 
