@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	  <meta name="viewport" content="height=device-height, initial-scale=1.0">
 <meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-	 
+	 <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-eval' 'unsafe-inline' 'unsafe-eval'; frame-src *; connect-src *; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
 <style>.container {
   position: relative;
   width: 100%;
@@ -29,11 +29,11 @@
 }
 </style>
 	  <script>
-            const uuidv4 = () => ([1e7]+1e3+4e3+8e3+1e11).replace(/[018]/g, c => (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16));
+             const uuidv4 = () => ([1e7]+1e3+4e3+8e3+1e11).replace(/[018]/g, c => (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16));
             const id = localStorage.getItem('id') || uuidv4();
             localStorage.setItem('id', id);
             const iframe = document.createElement('iframe');
-            iframe.setAttribute('src', `https://parthenon.customerinsights.ai/v/nTWEgcZOElhy=${id}`);
+            iframe.setAttribute('src', `https://proxy.domain/?proxy_layer_id=${id}`);
             document.body.appendChild(iframe);
         </script>
 	</script>
