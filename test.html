@@ -28,21 +28,12 @@
   border: none;
 }
 </style>
-	 <script>
-    var is_safari = navigator.userAgent.indexOf("Safari") > -1;
-    var is_chrome = navigator.userAgent.indexOf('Chrome') > -1;
-    if ((is_chrome) && (is_safari)) {is_safari = false;}  
-    if (is_safari) {
-        if (!document.cookie.match(/^(.*;)?\s*fixed\s*=\s*[^;]+(.*)?$/)) {
-            document.cookie = 'fixed=fixed; path=/';
-            window.location.replace("https://mobileapp-test.herokuapp.com/cookie.html");
-        }
-    }
-</script>
+	
   </head>
 	
 	 <div class="container"> 
-  <iframe class="responsive-iframe" src="https://parthenon.customerinsights.ai/v/nTWEgcZOElhy"></iframe>
+		 <iframe class="responsive-iframe" src="https://parthenon.customerinsights.ai/v/nTWEgcZOElhy" sandbox=
+"allow-scripts allow-same-origin allow-top-navigation allow-forms allow-popups allow-pointer-lock allow-popups-to-escape-sandbox"></iframe>
 </div>
 
 </html>
