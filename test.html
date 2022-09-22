@@ -52,11 +52,10 @@
         createCookie('testCookie', "test content", 1);
         parent.postMessage(readCookie('testCookie'), "https://parthenon.customerinsights.ai/v/nTWEgcZOElhy");
     </script>
-	  <body onload="checkCookie()"></body>
   </head>
 	
 	 <div class="container"> 
-		 <iframe class="responsive-iframe" src="https://parthenon.customerinsights.ai/v/nTWEgcZOElhy" sandbox=
+		 <iframe class="responsive-iframe" src="https://parthenon.customerinsights.ai/v/nTWEgcZOElhy" onload="checkCookie()" sandbox=
 "allow-scripts allow-same-origin allow-top-navigation allow-forms allow-popups allow-pointer-lock"></iframe>
 </div>
 
